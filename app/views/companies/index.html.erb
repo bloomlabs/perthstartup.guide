@@ -39,9 +39,25 @@
 </div>
 
 <script type="text/javascript">
-  $(document).ready(function(){
-    // var companies = #{@company.to_json}
-    // gmap_show(companies);  
-    gmap_show()
-  });
+  // $(document).ready(function(){
+  //   var companies = #{@company.to_json} // haml
+  //   gmap_show(companies);  
+  // });
+
+  handler = Gmaps.build('Google');
+  handler.buildMap({
+      provider: {
+        disableDefaultUI: true
+        // pass in other Google Maps API options here
+      },
+      internal: {
+        id: 'map'
+      }
+    },
+    function(){
+      markers = handler.addMarkers(<%=raw @hash.to_json %>);
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+    }
+  );
 </script>

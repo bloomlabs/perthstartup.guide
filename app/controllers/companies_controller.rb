@@ -5,6 +5,12 @@ class CompaniesController < ApplicationController
   # GET /companies.json
   def index
     @companies = Company.all
+    @hash = Gmaps4rails.build_markers(@companies) do |company, marker|
+      marker.lat company.latitude
+      marker.lng company.longitude
+      marker.infowindow company.name
+      marker.json({:id => company.id })
+    end
   end
 
   # GET /companies/1
