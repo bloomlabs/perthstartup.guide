@@ -87,12 +87,22 @@ class CompaniesController < ApplicationController
     def set_marker_image(type)
       if type == "Startup"
         return 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=S|FF0000|000000'
-      elsif type == "City"
-        return 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=C|007FFF|000000'
-      elsif type == "University"
-        return 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=U|FFEB3B|000000'
+      elsif type == "Accelerator"
+        return 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=A|007FFF|000000'
+      elsif type == "Incubator"
+        return 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=I|FFEB3B|000000'
+      elsif type == "Investor"
+        return 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=$|4caf50|000000'
+      elsif type == "Coworking"
+        return 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=W|673ab7|000000'
+      elsif type == "Consulting"
+        return 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=C|f57c00|000000'
+      elsif type == "Event"
+        return 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=E|e91e63|000000'
+      elsif type == "Hackspace"
+        return 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=H|1a237e|000000'
       else
-        return 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=?|000000|000000'
+        return 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=?|ffffff|000000'
       end
     end
 end
