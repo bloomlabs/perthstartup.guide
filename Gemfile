@@ -43,3 +43,8 @@ group :development, :test do
   gem 'spring'
 end
 
+# Project gems
+gem 'gmaps4rails', '~> 2.1.2'
+gem 'geocoder', '~> 1.2.9'
+gem 'haml', '~> 4.0.6'
+
