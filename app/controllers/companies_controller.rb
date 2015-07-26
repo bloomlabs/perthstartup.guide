@@ -6,10 +6,16 @@ class CompaniesController < ApplicationController
   def index
     @companies = Company.all
     @hash = Gmaps4rails.build_markers(@companies) do |company, marker|
+      icon_url = set_marker_image(company.type_of)
       marker.lat company.latitude
       marker.lng company.longitude
       marker.infowindow company.name
-      marker.json({:id => company.id })
+      marker.json({id: company.id, title: company.name, class: company.type_of })
+      marker.picture({
+        :url => view_context.image_path(icon_url),
+        :width   => 32,
+        :height  => 32
+      })
     end
   end
 
@@ -76,5 +82,17 @@ class CompaniesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def company_params
       params.require(:company).permit(:lat, :lng, :address, :name, :type_of)
+    end
+
+    def set_marker_image(type)
+      if type == "Startup"
+        return 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=S|FF0000|000000'
+      elsif type == "City"
+        return 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=C|007FFF|000000'
+      elsif type == "University"
+        return 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=U|FFEB3B|000000'
+      else
+        return 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=?|000000|000000'
+      end
     end
 end
