@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20150726054710) do
     t.float    "lng"
     t.string   "address"
     t.string   "name"
-    t.string   "type"
+    t.string   "type_of"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

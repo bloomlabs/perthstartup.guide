@@ -5,7 +5,7 @@ class CreateCompanies < ActiveRecord::Migration
       t.float :lng
       t.string :address
       t.string :name
-      t.string :type
+      t.string :type_of
 
       t.timestamps null: false
     end
