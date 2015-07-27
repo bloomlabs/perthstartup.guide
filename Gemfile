@@ -47,4 +47,6 @@ end
 gem 'gmaps4rails', '~> 2.1.2'
 gem 'geocoder', '~> 1.2.9'
 gem 'haml', '~> 4.0.6'
+gem 'materialize-sass', '~> 0.97.0'
+gem 'normalize-rails', '~> 3.0.3'
 

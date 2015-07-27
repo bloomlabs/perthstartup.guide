@@ -33,32 +33,29 @@
   </tbody>
 </table>
 
-<br><br>
-
 <%= link_to 'New Company', new_company_path %>
 
 <br><br>
 
-<table class="type-table">
-  <thead>
-    <th>Key</th>
-  </thead>
-  <tbody>
-      <% Company::TYPES.each do |type| %>
-        <tr>
-          <td colspan="3", class="<%= type %>"></td>
-          <td><%= type %></td>
-        </tr>
-      <% end %>
-  </tbody>
-</table>
-
+<div class="map-container">
+  <div class="type-table">
+    <table>
+      <thead>
+        <th>Key</th>
+      </thead>
+      <tbody>
+          <% Company::TYPES.each do |type| %>
+            <tr>
+              <td class="type-key <%= type %>"><%= type %></td>
+            </tr>
+          <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div id="map"></div>
+</div>
 
 <br><br>
-
-<div style='width: 800px;'>
-  <div id="map" style='width: 800px; height: 400px;'></div>
-</div>
 
 <script type="text/javascript">
   handler = Gmaps.build('Google');

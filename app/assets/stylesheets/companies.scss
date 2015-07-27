@@ -1,3 +1,52 @@
 // Place all the styles related to the Companies controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.map-container{
+	margin: auto;
+	outline:1px solid black;
+	#map{
+		width: 80%;
+		height: 500px;
+	}
+	.type-table{
+		font-weight: bold;
+		width: 20%;
+
+		.type-key{
+		width:20px;
+		}
+
+		.Startup{
+			color: #FF0000;
+		}
+
+		.Accelerator{
+			color: #007FFF;
+		}
+
+		.Incubator{
+			color: #FFEB3B;
+		}
+
+		.Investor{
+			color: #4caf50;
+		}
+
+		.Coworking{
+			color: #673ab7;
+		}
+
+		.Consulting{
+			color: #f57c00;
+		}
+
+		.Event{
+			color: #e91e63;
+		}
+
+		.Hackspace{
+			color: #1a237e;
+		}
+	}
+}
