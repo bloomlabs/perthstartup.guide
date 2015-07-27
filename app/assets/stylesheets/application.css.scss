@@ -13,3 +13,36 @@
  *= require_tree .
  *= require_self
  */
+
+table{
+	td{
+		min-width: 50px;
+	}
+}
+
+.type-table{
+	.Startup{
+		background-color: #FF0000;
+	}
+	.Accelerator{
+		background-color: #007FFF;
+	}
+	.Incubator{
+		background-color: #FFEB3B;
+	}
+	.Investor{
+		background-color: #4caf50;
+	}
+	.Coworking{
+		background-color: #673ab7;
+	}
+	.Consulting{
+		background-color: #f57c00;
+	}
+	.Event{
+		background-color: #e91e63;
+	}
+	.Hackspace{
+		background-color: #1a237e;
+	}
+}
