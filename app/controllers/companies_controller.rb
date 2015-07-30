@@ -17,6 +17,9 @@ class CompaniesController < ApplicationController
         :height  => 32
       })
     end
+
+    @type = "Startup"
+    @display = Company.all.where(type_of: @type)
   end
 
   def display
