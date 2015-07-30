@@ -19,6 +19,12 @@ class CompaniesController < ApplicationController
     end
   end
 
+  def display
+    # @type = ...
+    @type = "Startup"
+    @display = Company.all.where(type_of: @type)
+  end
+
   # GET /companies/1
   # GET /companies/1.json
   def show
