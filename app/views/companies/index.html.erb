@@ -3,7 +3,7 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Companies</h1>
+<h1 id="main-title">Listing Companies</h1>
 
 <table>
   <thead>
@@ -46,7 +46,7 @@
       <tbody>
           <% Company::TYPES.each do |type| %>
             <tr>
-              <td class="type-key <%= type %>"><%= type %></td>
+              <td class="type-key", id="<%= type %>"><%= type %></td>
             </tr>
           <% end %>
       </tbody>
