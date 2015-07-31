@@ -77,4 +77,12 @@
       handler.fitMapToBounds();
     }
   );
+
+  $("input[type='checkbox']").on('click', function(evt, foo){
+    var checkedCategories = [];
+    $("input:checked").each(function(index, elt){
+      checkedCategories.push($(elt).attr('name'));
+    });
+    showCategories(checkedCategories);
+    });
 </script>

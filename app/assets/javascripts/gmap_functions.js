@@ -19,20 +19,20 @@
   //    });
   //   }
 
-  //   function showCategories(categories){
-  //     var shownMakers = []
-  //     _.each(markers, function(marker){
-  //       if (_.contains(categories, marker.cat)){
-  //         marker.show(); 
-  //         shownMakers.push(marker);
-  //       }
-  //       else
-  //         marker.hide();
-  //     })
-  //     handler.resetBounds();
-  //     handler.bounds.extendWith(shownMakers);
-  //     handler.fitMapToBounds();
-  //   }
+    function showCategories(categories){
+      var shownMakers = []
+      _.each(markers, function(marker){
+        if (_.contains(categories, marker.cat)){
+          marker.show(); 
+          shownMakers.push(marker);
+        }
+        else
+          marker.hide();
+      })
+      handler.resetBounds();
+      handler.bounds.extendWith(shownMakers);
+      handler.fitMapToBounds();
+    }
     
   //   $("input[type='checkbox']").on('click', function(evt, foo){
   //     var checkedCategories = [];
