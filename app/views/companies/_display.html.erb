@@ -1,5 +1,5 @@
-<p>
+<ul>
 	<% @display.each do |item| %>
-		<p><%= item.name %></p>
+			<li><a id="<%= item.name %>", class="select-link"><%= item.name %></a></li>
 	<% end %>
-</p>
+</ul>

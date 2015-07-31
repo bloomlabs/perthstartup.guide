@@ -25,8 +25,8 @@ class CompaniesController < ApplicationController
       })
     end
 
-    @type = "Startup"
-    @display = Company.all.where(type_of: @type)
+    # @type = "Startup"
+    # @display = Company.all.where(type_of: @type)
   end
 
   def display

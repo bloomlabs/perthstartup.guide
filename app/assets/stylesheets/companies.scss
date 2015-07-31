@@ -52,3 +52,9 @@
 		}
 	}
 }
+
+.select-link{
+	&:hover{
+		cursor: pointer;
+	}
+}

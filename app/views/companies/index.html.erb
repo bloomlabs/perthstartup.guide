@@ -93,6 +93,17 @@
       handler.bounds.extendWith(shownMakers);
       handler.fitMapToBounds();
     }
+
+    function selectMarker(name){
+      _.each(markers, function(marker){
+          if(marker.title == name){
+          handler.getMap().setZoom(14);
+          marker.setMap(handler.getMap());
+          marker.panTo();
+          google.maps.event.trigger(marker.getServiceObject(), 'click');
+        }
+      })
+    }
     
     $("input[type='checkbox']").on('click', function(evt, foo){
       var checkedCategories = [];
@@ -100,6 +111,10 @@
         checkedCategories.push($(elt).attr('name'));
       });
       showCategories(checkedCategories);
+    });
+
+    $(".select-link").click(function(){
+      selectMarker(this.id);
     });
     
     buildMap();
