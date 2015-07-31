@@ -17,8 +17,8 @@ class CompaniesController < ApplicationController
       marker.lat company.latitude
       marker.lng company.longitude
       marker.infowindow company.name
-      marker.json({id: company.id, title: company.name, class: company.type_of })
-      marker.picture({
+      marker.json({id: company.id, title: company.name, cat: company.type_of })
+      marker.picture({ 
         :url => view_context.image_path(icon_url),
         :width   => 32,
         :height  => 32

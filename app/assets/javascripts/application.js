@@ -16,9 +16,3 @@
 //= require underscore
 //= require gmaps/google
 //= require_tree .
-
-$(function() {
-	$(".type-key").click(function() {
-		alert(this.id);
-	});
-});

@@ -3,7 +3,7 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1 id="main-title">Listing Companies</h1>
+<h1>Listing Companies</h1>
 
 <table>
   <thead>
@@ -46,7 +46,7 @@
       <tbody>
           <% Company::TYPES.each do |type| %>
             <tr>
-              <td class="type-key", id="<%= type %>"><%= type %></td>
+              <td class="type-key", id="<%= type %>"><input type="checkbox", name="<%= type %>", checked="checked"><%= type %></td>
             </tr>
           <% end %>
       </tbody>
@@ -57,32 +57,51 @@
 
 <br><br>
 
-<%#= render :partial => 'companies/display' %>
 <%= render 'display' %>
 
 <script type="text/javascript">
-  handler = Gmaps.build('Google');
-  handler.buildMap({
-      provider: {
-        disableDefaultUI: true
-        // pass in other Google Maps API options here
-      },
-      internal: {
-        id: 'map'
-      }
-    },
-    function(){
-      markers = handler.addMarkers(<%=raw @hash.to_json %>);
-      handler.bounds.extendWith(markers);
+ $(document).ready(function(){
+  
+    var json = <%=raw @hash.to_json %>
+    
+    var handler;
+    var markers = [];
+  
+    function buildMap(){
+      handler = Gmaps.build('Google');
+      handler.buildMap({ internal: {id: 'map'}}, function(){
+        markers = handler.addMarkers(json);
+        _.each(json, function(elt, index){
+          _.extend(markers[index], elt);
+        });
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();      
+     });
+    }
+
+    function showCategories(categories){
+      var shownMakers = []
+      _.each(markers, function(marker){
+        if (_.contains(categories, marker.cat)){
+          marker.show(); 
+          shownMakers.push(marker);
+        }
+        else
+          marker.hide();
+      })
+      handler.resetBounds();
+      handler.bounds.extendWith(shownMakers);
       handler.fitMapToBounds();
     }
-  );
-
-  $("input[type='checkbox']").on('click', function(evt, foo){
-    var checkedCategories = [];
-    $("input:checked").each(function(index, elt){
-      checkedCategories.push($(elt).attr('name'));
+    
+    $("input[type='checkbox']").on('click', function(evt, foo){
+      var checkedCategories = [];
+      $("input:checked").each(function(index, elt){
+        checkedCategories.push($(elt).attr('name'));
+      });
+      showCategories(checkedCategories);
     });
-    showCategories(checkedCategories);
-    });
+    
+    buildMap();
+  });
 </script>
