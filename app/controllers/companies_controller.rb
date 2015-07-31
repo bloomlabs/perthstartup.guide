@@ -4,7 +4,12 @@ class CompaniesController < ApplicationController
   # GET /companies
   # GET /companies.json
   def index
-    @companies = Company.all
+    if params[:search]
+      @companies = Company.search(params[:search])
+    else
+      @companies = Company.all
+    end
+
     @hash = Gmaps4rails.build_markers(@companies) do |company, marker|
       icon_url = set_marker_image(company.type_of)
       marker.lat company.latitude
