@@ -49,4 +49,5 @@ gem 'geocoder', '~> 1.2.9'
 gem 'haml', '~> 4.0.6'
 gem 'materialize-sass', '~> 0.97.0'
 gem 'normalize-rails', '~> 3.0.3'
+gem 'jquery-ui-rails', '~> 5.0.5'
 
