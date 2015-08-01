@@ -58,3 +58,14 @@
 		cursor: pointer;
 	}
 }
+
+.display-types{
+	list-style: none;
+	border: 1px solid black;
+	width: 20%;
+	li{
+		&:hover{
+			background: #2F696E;
+		}
+	}
+}

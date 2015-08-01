@@ -3,6 +3,39 @@
 
 <p id="notice"><%= notice %></p>
 
+<%= link_to 'New Company', new_company_path %>
+
+<br><br>
+
+<form action="#" id="search-form">
+  <input type="text" name="search" id="search" placeholder="Find Company">
+  <button type="submit" id="search-btn">search</button>
+</form>
+
+<br>
+<div class="map-container">
+  <div class="type-table">
+    <table>
+      <thead>
+        <th>Key</th>
+      </thead>
+      <tbody>
+          <% Company::TYPES.each do |type| %>
+            <tr>
+              <td class="type-key", id="<%= type %>"><input type="checkbox", name="<%= type %>", checked="checked"><%= type %></td>
+            </tr>
+          <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div id="map"></div>
+</div>
+
+<br>
+
+<%= render 'display' %>
+
+<br><br>
 <h1>Listing Companies</h1>
 
 <table>
@@ -32,38 +65,6 @@
     <% end %>
   </tbody>
 </table>
-
-<%= link_to 'New Company', new_company_path %>
-
-<br><br>
-
-<form action="#" id="search-form">
-  <input type="text" name="search" id="search" placeholder="Find Company">
-  <button type="submit" id="search-btn">search</button>
-</form>
-
-<br>
-<div class="map-container">
-  <div class="type-table">
-    <table>
-      <thead>
-        <th>Key</th>
-      </thead>
-      <tbody>
-          <% Company::TYPES.each do |type| %>
-            <tr>
-              <td class="type-key", id="<%= type %>"><input type="checkbox", name="<%= type %>", checked="checked"><%= type %></td>
-            </tr>
-          <% end %>
-      </tbody>
-    </table>
-  </div>
-  <div id="map"></div>
-</div>
-
-<br><br>
-
-<%= render 'display' %>
 
 <script type="text/javascript">
  $(document).ready(function(){
