@@ -2,18 +2,53 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+html{
+	height: 100%;
+	body{
+		height: 100%;
+	}
+}
+
+header{
+	margin:auto;
+	height: 50px;
+	a{
+		display: inline;
+		width: 25%;
+		margin-right: 10%;
+	}
+	form{
+		display: inline;
+		width: 50%;
+		input{
+			width: 30%;
+		}
+		button: width 10%;
+	}
+}
+
 .map-container{
 	margin: auto;
 	outline:1px solid black;
+	height: 80%;
 	#map{
-		width: 80%;
-		height: 500px;
+		width: 85%;
+		height: 100%;
+		display:inline-block;
+		margin-right:10px;
+
 	}
 	.type-table{
 		font-weight: bold;
-		width: 20%;
+		width: 10%;
+		display: inline-block;
 
+		th{
+			text-decoration: underline;
+			padding-bottom: 30px;
+		}
 		.type-key{
+			padding-bottom: 30px;
 			&:hover{
 				cursor: pointer;
 			}
@@ -71,21 +106,16 @@
 }
 
 #infowindow-div{
-	background: green;
-
+	border: 1px solid black
 	#infowindow-title{
-		border: 1px solid black;
 	}
 
 	#infowindow-link{
-		border: 1px solid black;
 	}
 
 	#infowindow-address{
-		border: 1px solid black;
 	}
 
 	#infowindow-description{
-		border: 1px solid black;
 	}
 }
