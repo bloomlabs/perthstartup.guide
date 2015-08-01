@@ -65,7 +65,27 @@
 	width: 20%;
 	li{
 		&:hover{
-			background: #2F696E;
+			
 		}
+	}
+}
+
+#infowindow-div{
+	background: green;
+
+	#infowindow-title{
+		border: 1px solid black;
+	}
+
+	#infowindow-link{
+		border: 1px solid black;
+	}
+
+	#infowindow-address{
+		border: 1px solid black;
+	}
+
+	#infowindow-description{
+		border: 1px solid black;
 	}
 }

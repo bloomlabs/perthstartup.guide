@@ -12,11 +12,11 @@ class CompaniesController < ApplicationController
       @display = Company.all
     end
 
-    @hash = Gmaps4rails.build_markers(@display) do |company, marker|
+    @hash = Gmaps4rails.build_markers(@companies) do |company, marker|
       icon_url = set_marker_image(company.type_of)
       marker.lat company.latitude
       marker.lng company.longitude
-      marker.infowindow company.name
+      marker.infowindow gmaps4rails_infowindow(company)
       marker.json({id: company.id, title: company.name, cat: company.type_of })
       marker.picture({ 
         :url => view_context.image_path(icon_url),
@@ -24,15 +24,18 @@ class CompaniesController < ApplicationController
         :height  => 32
       })
     end
-
-    # @type = "Startup"
-    # @display = Company.all.where(type_of: @type)
   end
 
-  def display
-    # @type = ...
-    @type = "Startup"
-    @display = Company.all.where(type_of: @type)
+  def gmaps4rails_infowindow(company)
+    "<div id=infowindow-div>
+      <h3 id='infowindow-title'>#{company.name}<h3>
+      <a id='infowindow-link'>#{company.link}</a>
+      <p id='infowindow-address'>#{company.address}</p>
+      <p id= 'infowindow-description'>#{company.description}</p>
+    </div>"
+  end
+
+  def infowindow
   end
 
   # GET /companies/1
@@ -97,7 +100,7 @@ class CompaniesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def company_params
-      params.require(:company).permit(:lat, :lng, :address, :name, :type_of)
+      params.require(:company).permit(:lat, :lng, :address, :name, :type_of, :link, :description)
     end
 
     def set_marker_image(type)
