@@ -3,5 +3,5 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 jQuery ->
-	$('#search').autocomplete
-		source: "/search_suggestions"
+  $('#search').autocomplete
+    source: "/search_suggestions"

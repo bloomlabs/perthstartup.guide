@@ -1,14 +1,16 @@
 class SearchSuggestion < ActiveRecord::Base
 
 	def self.terms_for(prefix)
-		where("term like ?" "#{prefix}_%")
-		suggestions.order("popularity desc").limit(10).pluck(:term)
+		Rails.cache.fetch(["search-terms"]) do
+			where("term like ?" "#{prefix}_%")
+			suggestions.order("popularity desc").limit(10).pluck(:term)
+		end
 	end
 
 	def self.index_companies
 		Company.find_each do |company|
 			index_term(company.name)
-			company.name.split.each { |t| index_term(t)}
+			company.name.split.each { |t| index_term(t) }
 		end
 	end
 
