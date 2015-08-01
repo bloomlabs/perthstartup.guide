@@ -37,7 +37,11 @@
 
 <br><br>
 
-<%= text_field_tag :search, nil, placeholder: "Find Company", id: "search", type: "search" %>
+<form action="#" id="search-form">
+  <input type="text" name="search" id="search" placeholder="Find Company">
+  <button type="submit" id="search-btn">search</button>
+</form>
+
 <br>
 <div class="map-container">
   <div class="type-table">
@@ -98,7 +102,7 @@
 
     function selectMarker(name){
       _.each(markers, function(marker){
-          if(marker.title == name){
+          if(marker.title.toLowerCase() == name.toLowerCase()){
           handler.getMap().setZoom(14);
           marker.setMap(handler.getMap());
           marker.panTo();
@@ -117,6 +121,12 @@
 
     $(".select-link").click(function(){
       selectMarker(this.id);
+    });
+
+    $("#search-btn").click(function() {
+      var query = document.forms["search-form"]["search"].value;
+      selectMarker(query);
+      return false;
     });
     
     buildMap();
