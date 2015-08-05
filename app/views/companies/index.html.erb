@@ -13,14 +13,14 @@
     </form>
   </div>
   <div class="three columns">
-    <%= link_to 'New Company', new_company_path, class: "add-new" %>
+    <%= link_to "<button>Add Company</button>".html_safe, new_company_path, class: "add-new" %>
   </div>
 </div>
 <div class="content">
   <div class="row">
     <p id="notice"><%= notice %></p>
   </div>
-  <div class="main-row row">
+  <div class="map-div row">
     <div class="map-column ten columns">
       <div id="map"></div>
     </div>
