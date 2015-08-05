@@ -13,6 +13,12 @@ html{
 	margin-left: 2%;
 }
 
+a{
+	color: black;
+}
+
+
+
 // .margin{
 // 	width: 90%;
 // 	margin: auto;
@@ -86,6 +92,34 @@ html{
 
 .header{
 	background:#03a9f4;
+	margin: auto;
+	text-align: vertical;
+	height: 80px;
+	padding:0 2%;
+	
+	.add-new{
+	color: black;
+	vertical-align: middle;
+		&:hover{
+			color:black;
+			text-decoration: underline;
+		}
+	}
+
+	#bloom-logo{
+		text-align:vertical;
+	}
+	
+	#search-form{
+		width:100%;
+		#search{
+			width: 80%;
+		}
+
+		#search-button{
+			width: 20%;
+		}
+	}
 }
 
 // #map{

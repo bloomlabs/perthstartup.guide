@@ -3,17 +3,17 @@
 
 <!-- <div class="content container"> -->
 <div class="row header">
-  <div class="four columns">
-    <h1>LOGO</h1>
-  </div>
-  <div class="two columns">
-    <%= link_to 'New Company', new_company_path %>
+  <div class="three columns">
+    <h1 id="bloom-logo"><img src="<%= asset_path('bloom-logo.png') %>" alt="Bloom"></h1>
   </div>
   <div class="six columns">
     <form action="#" id="search-form">
       <input type="text" name="search" id="search" placeholder="Find Company">
       <button type="submit" id="search-btn">search</button>
     </form>
+  </div>
+  <div class="three columns">
+    <%= link_to 'New Company', new_company_path, class: "add-new" %>
   </div>
 </div>
 <div class="content">
