@@ -29,7 +29,7 @@ class CompaniesController < ApplicationController
   def gmaps4rails_infowindow(company)
     "<div id=infowindow-div>
       <h3 id='infowindow-title'>#{company.name}<h3>
-      <a id='infowindow-link'>#{company.link}</a>
+      <a id='infowindow-link', href='http://#{company.link}'>#{company.link}</a>
       <p id= 'infowindow-description'>#{company.description}</p>
       <p id='infowindow-address'>#{company.address}</p>
     </div>"
