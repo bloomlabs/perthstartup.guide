@@ -7,7 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<div class="row header">
+  <div class="three columns">
+    <!-- <h1 id="bloom-logo"><img src="<%= asset_path('bloom-logo.png') %>" alt="Bloom"></h1> -->
+    <%= link_to image_tag(asset_path('bloom-logo.png'), alt:'<h1>Bloom</h1>.html_safe', id: 'bloom-logo'),  root_path %>
+  </div>
+  <div class="six columns">
+    <form action="#" id="search-form">
+      <input type="text" name="search" id="search" placeholder="Find Company">
+      <button type="submit" id="search-btn">search</button>
+    </form>
+  </div>
+  <div class="three columns">
+    <%= link_to "<button>Add Company</button>".html_safe, new_company_path, class: "add-new" %>
+  </div>
+</div>
 <%= yield %>
 
 </body>

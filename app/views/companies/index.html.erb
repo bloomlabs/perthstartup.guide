@@ -2,20 +2,6 @@
 <script src='//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js' type='text/javascript'></script>
 
 <!-- <div class="content container"> -->
-<div class="row header">
-  <div class="three columns">
-    <h1 id="bloom-logo"><img src="<%= asset_path('bloom-logo.png') %>" alt="Bloom"></h1>
-  </div>
-  <div class="six columns">
-    <form action="#" id="search-form">
-      <input type="text" name="search" id="search" placeholder="Find Company">
-      <button type="submit" id="search-btn">search</button>
-    </form>
-  </div>
-  <div class="three columns">
-    <%= link_to "<button>Add Company</button>".html_safe, new_company_path, class: "add-new" %>
-  </div>
-</div>
 <div class="content">
   <div class="row">
     <p id="notice"><%= notice %></p>

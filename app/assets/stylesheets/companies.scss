@@ -3,15 +3,18 @@
 // // You can use Sass (SCSS) here: http://sass-lang.com/
 
 html{
-	height: 100vh;
+	height: 100%;
 	body{
-		height: 100vh;
+		height: 100%;
 	}
+}
+
+button{
+	background-color:#0288D1; 
 }
 
 #map{
 	height: 600px;
-	// height: 100%;
 	margin-left: 2%;
 }
 
@@ -22,38 +25,40 @@ html{
 .header{
 	background:#03a9f4;
 	margin: auto;
-	text-align: vertical;
-	height: 75px;
-	padding:0 2%;
-	
-	.add-new{
-	color: black;
 	vertical-align: middle;
+	height: 50px;
+	padding:5px 2%;
+	
+.add-new{
+vertical-align: middle;
+	button{
+		color: white;
+		background-color: #0288D1;
 		&:hover{
-			color:black;
-			text-decoration: underline;
+			color:white;
 		}
 	}
-
-	.align{
-		height: 100%;
-		background: green;
-		text-align: vertical;
-		vertical-align: middle;
-	}
+}
 
 	#bloom-logo{
-		text-align:vertical;
+		vertical-align: middle;
+		height: 50px;
 	}
 	
 	#search-form{
+		text-align: vertical;
+		vertical-align: middle;
 		width:100%;
 		#search{
-			width: 80%;
+			width: 70%;
 		}
 
-		#search-button{
+		#search-btn{
 			width: 20%;
+			padding: 0;
+			text-align: middle;
+			background-color:#0288D1;
+			color: white;
 		}
 	}
 }
@@ -92,7 +97,6 @@ html{
 #Hackspace{
 	color: #1a237e;
 }
-
 
 // .select-link{
 // 	&:hover{
