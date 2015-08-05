@@ -9,6 +9,15 @@ html{
 	}
 }
 
+#map{
+	margin-left: 2%;
+}
+
+// .margin{
+// 	width: 90%;
+// 	margin: auto;
+// }
+
 // header{
 // 	margin:auto;
 // 	height: 50px;
@@ -54,7 +63,8 @@ html{
 // 			}
 // 		}
 
-.content{
+// .content{
+.margin{
 	height: 100vh;
 	.main-row{
 		height: 60vh;
@@ -68,6 +78,14 @@ html{
 			}	
 		}
 	}
+}
+
+#map{
+	height: 500px;
+}
+
+.header{
+	background:#03a9f4;
 }
 
 // #map{
