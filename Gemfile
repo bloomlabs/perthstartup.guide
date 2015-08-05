@@ -50,4 +50,4 @@ gem 'haml', '~> 4.0.6'
 gem 'materialize-sass', '~> 0.97.0'
 gem 'normalize-rails', '~> 3.0.3'
 gem 'jquery-ui-rails', '~> 5.0.5'
-# gem 'skeleton-rails', '~> 1.0'
+# gem 'skeleton-rails', '~> 1.0' - skeleton needs to update their gem/github page

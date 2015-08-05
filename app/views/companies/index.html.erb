@@ -77,8 +77,8 @@
 
     function buildMap(){
       var randomise = 20;
-      // handler = Gmaps.build('Google', { markers: { maxRandomDistance: randomise, doClustering: true } });
-      handler = Gmaps.build("Google", { markers: { maxRandomDistance: randomise, clusterer: {gridSize: 10, maxZoom: 16} } })
+      handler = Gmaps.build('Google', { markers: { maxRandomDistance: randomise, doClustering: true } });
+      // handler = Gmaps.build("Google", { markers: { maxRandomDistance: randomise, clusterer: {gridSize: 10, maxZoom: 16} } })
       handler.buildMap({ internal: {id: 'map'}}, function(){
         markers = handler.addMarkers(json);
         _.each(json, function(elt, index){
