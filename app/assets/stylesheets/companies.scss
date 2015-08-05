@@ -98,6 +98,24 @@ vertical-align: middle;
 	color: #1a237e;
 }
 
+.rails-form{
+	width: 80%;
+	margin: auto;	
+
+	.field{
+		width: 100%;
+		input{
+			width: 50%;
+		}
+		textarea{
+			width: 50%;
+		}
+		select{
+			width: 30%;
+		}
+	}
+}
+
 // .select-link{
 // 	&:hover{
 // 		cursor: pointer;
