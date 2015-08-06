@@ -18,19 +18,24 @@
       <tbody>
         <% Company::TYPES.each do |type| %>
           <tr>
-            <td class="type-key", id="<%= type %>"><input type="checkbox", name="<%= type %>", checked="checked"><%= type %></td>
+            <td class="type-key <%= type %>"><input type="checkbox", name="<%= type %>", checked="checked"><%= type %></td>
           </tr>
         <% end %>
       </tbody>
     </div>
   </div>
 </div>
-<!-- </div> -->
-<!--
-<%= render 'display' %>
 
-<br><br>
-<h1>Listing Companies</h1>
+
+<%#
+  display renders hooks from company names into the maps
+  commented out to avoid styling conflicts - skeleton.css messes with the layout
+  trying to implement as drop down like in represent.la
+
+<%= render 'display' %> 
+<!-- 
+Default rails listing from scaffold
+<h2>Rails Listing</h2>
 
 <table>
   <thead>
@@ -58,8 +63,8 @@
       </tr>
     <% end %>
   </tbody>
-</table>
--->
+</table> -->
+<!-- Script just here for now - will eventually move to asset pipeline -->
 <script type="text/javascript">
  $(document).ready(function(){
   
