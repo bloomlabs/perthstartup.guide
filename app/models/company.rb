@@ -4,9 +4,9 @@ class Company < ActiveRecord::Base
 	geocoded_by :address
 	after_validation :geocode
 
-	def self.search(search)
- 		where("type_of like ?", "%#{search}%")
-	end
+	# def self.search(search)
+ # 		where("type_of like ?", "%#{search}%")
+	# end
 
 	# ?utf8=✓&search=#index
 end
