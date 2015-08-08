@@ -3,4 +3,6 @@
 <%= render 'form' %>
 
 <%= link_to 'Show', @company %> |
+<%= link_to 'Destroy', @company, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'Back', companies_path %>
+
