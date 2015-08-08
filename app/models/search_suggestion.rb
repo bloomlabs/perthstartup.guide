@@ -13,7 +13,7 @@ class SearchSuggestion < ActiveRecord::Base
 	def self.index_companies
 		Company.find_each do |company|
 			index_term(company.name)
-			company.name.split.each { |t| index_term(t) }
+			# company.name.split.each { |t| index_term(t) }
 		end
 	end
 
