@@ -38,6 +38,10 @@ class CompaniesController < ApplicationController
   def infowindow
   end
 
+  def autocomplete
+    render json: %w[foo bar]
+  end
+
   # GET /companies/1
   # GET /companies/1.json
   def show
