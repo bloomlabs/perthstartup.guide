@@ -39,7 +39,8 @@ class CompaniesController < ApplicationController
   end
 
   def autocomplete
-    render json: %w[foo bar]
+    @companies = Company.all
+    render json: @companies.where("name LIKE ?", "%#{params[:term]}%").map(&:name)
   end
 
   # GET /companies/1
