@@ -17,7 +17,8 @@ class CompaniesController < ApplicationController
       icon_url = set_marker_image(company.type_of)
       marker.lat company.latitude
       marker.lng company.longitude
-      marker.infowindow gmaps4rails_infowindow(company)
+      # marker.infowindow gmaps4rails_infowindow(company)
+      marker.infowindow render_to_string(:partial => "/companies/infowindow", :locals => {:company => company})
       marker.json({id: company.id, title: company.name, cat: company.type_of })
       marker.picture({ 
         :url => view_context.image_path(icon_url),
@@ -27,14 +28,14 @@ class CompaniesController < ApplicationController
     end
   end
 
-  def gmaps4rails_infowindow(company)
-    "<div id=infowindow-div>
-      <h3 id='infowindow-title'>#{company.name}<h3>
-      <a id='infowindow-link', href='http://#{company.link}'>#{company.link}</a>
-      <p id= 'infowindow-description'>#{company.description}</p>
-      <p id='infowindow-address'>#{company.address}</p>
-    </div>"
-  end
+  # def gmaps4rails_infowindow(company)
+  #   "<div id=infowindow-div>
+  #     <h3 id='infowindow-title'>#{company.name}<h3>
+  #     #{link_to company.link, url_for(company.link)}
+  #     <p id= 'infowindow-description'>#{company.description}</p>
+  #     <p id='infowindow-address'>#{company.address}</p>
+  #   </div>"
+  # end
 
   def infowindow
   end
