@@ -6,8 +6,11 @@ $primary-color: #03a9f4;
 $secondary-color: #0288D1;
 html{
 	height: 100%;
+
 	body{
 		height: 100%;
+		font-family: 'Open Sans', sans-serif;
+  	font-weight: 100;
 	}
 }
 
@@ -31,6 +34,12 @@ button{
 		height: 100%;
 		#map{
 			height: 100%;
+		}
+
+		.type-column{
+			.checkbox{
+				margin-right: 10px;
+			}
 		}
 	}
 }

@@ -18,7 +18,7 @@
         <tbody>
           <% Company::TYPES.each do |type| %>
             <tr>
-              <td class="type-key <%= type %>"><input type="checkbox", name="<%= type %>", checked="checked"><%= type %></td>
+              <td class="type-key <%= type %>"><input type="checkbox", name="<%= type %>", checked="checked", class="checkbox"><%= type %></td>
             </tr>
           <% end %>
         </tbody>
