@@ -6,6 +6,7 @@ class CompaniesController < ApplicationController
   def index
     @companies = Company.all
 
+    # Not used yet
     if params[:search]
       @display = Company.all.where(type_of: params[:search])
     else
@@ -40,7 +41,8 @@ class CompaniesController < ApplicationController
 
   def autocomplete
     @companies = Company.all
-    render json: @companies.where("name LIKE ?", "%#{params[:term]}%").map(&:name)
+    # render json: @companies.where("name LIKE ?", "%#{params[:term]}%").map(&:name)
+    render json: @companies.where("LOWER(name) LIKE ?", "%#{params[:term].downcase}%").map(&:name)
   end
 
   # GET /companies/1
