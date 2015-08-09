@@ -28,21 +28,8 @@ class CompaniesController < ApplicationController
     end
   end
 
-  # def gmaps4rails_infowindow(company)
-  #   "<div id=infowindow-div>
-  #     <h3 id='infowindow-title'>#{company.name}<h3>
-  #     #{link_to company.link, url_for(company.link)}
-  #     <p id= 'infowindow-description'>#{company.description}</p>
-  #     <p id='infowindow-address'>#{company.address}</p>
-  #   </div>"
-  # end
-
-  def infowindow
-  end
-
   def autocomplete
     @companies = Company.all
-    # render json: @companies.where("name LIKE ?", "%#{params[:term]}%").map(&:name)
     render json: @companies.where("LOWER(name) LIKE ?", "%#{params[:term].downcase}%").map(&:name)
   end
 
