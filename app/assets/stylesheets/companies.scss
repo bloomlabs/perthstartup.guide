@@ -2,6 +2,8 @@
 // // They will automatically be included in application.css.
 // // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$primary-color: #03a9f4;
+$secondary-color: #0288D1;
 html{
 	height: 100%;
 	body{
@@ -9,36 +11,47 @@ html{
 	}
 }
 
-button{
-	background-color:#0288D1; 
+#wrapper {
+  min-height: 100%;
+  height: 100%;
+  position: relative;
 }
 
-#map{
-	height: 600px;
-	margin-left: 2%;
+button{
+	background-color: $secondary-color; 
 }
 
 .content{
-	border: 1px solid #0288D1;
+	border: 1px solid $secondary-color;
+	height: 85%;
+	.map-div{
+		position: relative;
+		height: 100%;
+		#map{
+			height: 100%;
+			// padding-left: 2%;
+			// margin-left: 2%;
+		}
+	}
 }
 
 .header{
-	background:#03a9f4;
+	background:$primary-color;
 	margin: auto;
 	vertical-align: middle;
 	height: 50px;
 	padding:5px 2%;
 	
-.add-new{
-vertical-align: middle;
-	button{
-		color: white;
-		background-color: #0288D1;
-		&:hover{
-			color:white;
+	.add-new{
+	vertical-align: middle;
+		button{
+			color: white;
+			background-color: $secondary-color;
+			&:hover{
+				color:white;
+			}
 		}
 	}
-}
 
 	#bloom-logo{
 		vertical-align: middle;
@@ -142,6 +155,18 @@ ul.ui-autocomplete {
 .ui-helper-hidden-accessible {
   display: none;
 }
+
+// footer{
+// 	position: absolute;
+// 	bottom:0;
+// 	height: 50px;
+// 	background-color: $primary-color;
+// 	padding-top: 10px;
+// 	p{
+// 		color: white;
+// 		text-align: center;
+// 	}
+// }
 
 // .select-link{
 // 	&:hover{

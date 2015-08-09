@@ -17,3 +17,9 @@
 //= require underscore
 //= require gmaps/google
 //= require_tree .
+
+// sticky footer
+// $(document).ready(function() {
+// 	var footerHeight = $('footer').height()+30;
+// 	$('body').css('margin-bottom', footerHeight);
+// });

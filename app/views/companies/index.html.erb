@@ -2,28 +2,32 @@
 <script src='//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js' type='text/javascript'></script>
 
 <!-- <div class="content container"> -->
+<div class="row">
+  <p id="notice"><%= notice %></p>
+</div>
 <div class="content">
-  <div class="row">
-    <p id="notice"><%= notice %></p>
-  </div>
   <div class="map-div row">
-    <div class="map-column ten columns">
-      <div id="map"></div>
-    </div>
+    <!-- <div class="map-column ten columns"> -->
+    <div id="map" class="ten columns"></div>
+    <!-- </div> -->
     <div class="type-column two columns">
       <table>
-      <thead>
-        <th>Key</th>
-      </thead>
-      <tbody>
-        <% Company::TYPES.each do |type| %>
-          <tr>
-            <td class="type-key <%= type %>"><input type="checkbox", name="<%= type %>", checked="checked"><%= type %></td>
-          </tr>
-        <% end %>
-      </tbody>
+        <thead>
+          <th>Key</th>
+        </thead>
+        <tbody>
+          <% Company::TYPES.each do |type| %>
+            <tr>
+              <td class="type-key <%= type %>"><input type="checkbox", name="<%= type %>", checked="checked"><%= type %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
+</div>
+<div class="row">
+  <p></p>
 </div>
 
 
