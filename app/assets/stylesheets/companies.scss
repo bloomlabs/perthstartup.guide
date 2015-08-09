@@ -22,15 +22,15 @@ button{
 }
 
 .content{
-	border: 1px solid $secondary-color;
+	// border: 1px solid $secondary-color;
 	height: 85%;
+	width: 98%;
+	margin:auto;
 	.map-div{
 		position: relative;
 		height: 100%;
 		#map{
 			height: 100%;
-			// padding-left: 2%;
-			// margin-left: 2%;
 		}
 	}
 }
