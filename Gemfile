@@ -50,6 +50,7 @@ gem 'haml'
 gem 'materialize-sass'
 gem 'normalize-rails'
 gem 'jquery-ui-rails'
+gem 'jquery-turbolinks'
 
 # heroku
 gem 'puma'
