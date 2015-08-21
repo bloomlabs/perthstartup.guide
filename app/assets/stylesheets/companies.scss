@@ -165,6 +165,20 @@ ul.ui-autocomplete {
   display: none;
 }
 
+.sub-nav {
+    display: none;
+}
+
+ul.visible {
+    display: block;
+}
+
+.click-this-test{
+	&:hover{
+		cursor: pointer;
+	}
+}
+
 // footer{
 // 	position: absolute;
 // 	bottom:0;

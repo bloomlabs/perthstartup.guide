@@ -18,7 +18,13 @@
         <tbody>
           <% Company::TYPES.each do |type| %>
             <tr>
-              <td class="type-key <%= type %>"><input type="checkbox", name="<%= type %>", checked="checked", class="checkbox"><%= type %></td>
+              <td class="type-key <%= type %>"><input type="checkbox", name="<%= type %>", checked="checked", class="checkbox"><p class="click-this-test"><%= type %></p>
+                <ul class="sub-nav display-types">
+                  <% @display.each do |item| %>
+                      <li><a id="<%= item.name %>", class="select-link"><%= item.name %></a></li>
+                  <% end %>
+                </ul> 
+              </td>
             </tr>
           <% end %>
         </tbody>
@@ -133,6 +139,10 @@ Default rails listing from scaffold
       var query = document.forms["search-form"]["search"].value;
       selectMarker(query);
       return false;
+    });
+
+    $('.click-this-test').click(function() {
+        $('.sub-nav').toggleClass('visible');
     });
     
     buildMap();
