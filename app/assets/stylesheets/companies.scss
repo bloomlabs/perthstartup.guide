@@ -173,11 +173,19 @@ ul.visible {
     display: block;
 }
 
-.click-this-test{
+.sub-select{
+	&:hover{
+		cursor: pointer;
+	}
+	display:inline;
+}
+
+.select-link{
 	&:hover{
 		cursor: pointer;
 	}
 }
+
 
 // footer{
 // 	position: absolute;
@@ -191,11 +199,6 @@ ul.visible {
 // 	}
 // }
 
-// .select-link{
-// 	&:hover{
-// 		cursor: pointer;
-// 	}
-// }
 
 // .display-types{
 // 	list-style: none;
