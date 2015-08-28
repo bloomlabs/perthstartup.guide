@@ -12,11 +12,11 @@
         <tbody>
           <% Company::TYPES.each do |type| %>
             <tr>
-              <td class="type-key <%= type %>"><input type="checkbox", name="<%= type %>", checked="checked", class="checkbox"><div class="sub-select"><%= type %></div>
+              <td class="type-key <%= type %>"><input type="checkbox", name="<%= type %>", checked="checked", class="checkbox"><div id="<%= type %>", class="sub-select"><%= type %></div>
                 <ul class="sub-nav display-types">
-                  <% @display.each do |item| %>
+                 <!--  <% @display.each do |item| %>
                       <li><a id="<%= item.name %>", class="select-link"><%= item.name %></a></li>
-                  <% end %>
+                  <% end %> -->
                 </ul> 
               </td>
             </tr>
@@ -66,6 +66,8 @@ Default rails listing from scaffold
  $(document).ready(function(){
   
     var json = <%=raw @hash.to_json %>
+    // var list $.parseJSON(json);
+
     
     var handler;
     var markers = [];
@@ -129,7 +131,14 @@ Default rails listing from scaffold
     });
 
     $('.sub-select').click(function() {
-        $('.sub-nav').toggleClass('visible');
+        var id = $(this).attr('id');
+        var list = <%=raw @companies.to_json %>
+
+        for(var i = 0; i < list.length; i++) {
+          if (id.toLowerCase() == list[i].type_of.toLowerCase()){
+            alert(list[i].name + " - " + list[i].type_of);
+          }
+        }
     });
     
     buildMap();
