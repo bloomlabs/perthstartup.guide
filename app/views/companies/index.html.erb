@@ -13,7 +13,7 @@
           <% Company::TYPES.each do |type| %>
             <tr>
               <td class="type-key <%= type %>"><input type="checkbox", name="<%= type %>", checked="checked", class="checkbox"><div id="<%= type %>", class="sub-select"><%= type %></div>
-                <ul class="sub-nav display-types">
+                <ul id="<%= type %>-nav", class="sub-nav display-types">
                  <!--  <% @display.each do |item| %>
                       <li><a id="<%= item.name %>", class="select-link"><%= item.name %></a></li>
                   <% end %> -->
@@ -133,10 +133,16 @@ Default rails listing from scaffold
     $('.sub-select').click(function() {
         var id = $(this).attr('id');
         var list = <%=raw @companies.to_json %>
+        var ul = document.getElementById(id+"-nav");
 
         for(var i = 0; i < list.length; i++) {
           if (id.toLowerCase() == list[i].type_of.toLowerCase()){
-            alert(list[i].name + " - " + list[i].type_of);
+            // alert(list[i].name + " - " + list[i].type_of);
+            var item = document.createElement('li');
+            item.setAttribute("id", list[i].name);
+            item.appendChild(document.createTextNode(list[i]).name)
+
+            ul.appendChild(item);
           }
         }
     });
