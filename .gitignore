@@ -166,3 +166,6 @@ dist/
 .tmp/
 
 >>>>>>> 8675094c2eff4980cc67da6817ab341fdd8bd108
+
+# Ignore application configuration
+/config/application.yml

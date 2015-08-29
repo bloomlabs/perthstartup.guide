@@ -54,6 +54,7 @@ class CompaniesController < ApplicationController
 
     respond_to do |format|
       if @company.save
+        UserMailer.approve_email(@company).deliver
         # format.html { redirect_to @company, notice: 'Company was successfully created.' }
         format.html {redirect_to companies_url, notice: 'Company added successfully' }
         format.json { head :no_content }

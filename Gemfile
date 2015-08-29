@@ -51,6 +51,7 @@ gem 'materialize-sass'
 gem 'normalize-rails'
 gem 'jquery-ui-rails'
 gem 'jquery-turbolinks'
+gem 'figaro'
 
 # heroku
 gem 'puma'
