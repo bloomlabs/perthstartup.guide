@@ -120,10 +120,6 @@ Default rails listing from scaffold
       showCategories(checkedCategories);
     });
 
-    $(".select-link").click(function(){
-      selectMarker(this.id);
-    });
-
     $("#search-btn").click(function() {
       var query = document.forms["search-form"]["search"].value;
       selectMarker(query);
@@ -133,18 +129,26 @@ Default rails listing from scaffold
     $('.sub-select').click(function() {
         var id = $(this).attr('id');
         var list = <%=raw @companies.to_json %>
+
+        var clear = document.getElementsByClassName("sub-nav");
+        for (var i = 0; i < clear.length; i++){
+          clear[i].innerHTML = "";
+        }
         var ul = document.getElementById(id+"-nav");
 
         for(var i = 0; i < list.length; i++) {
           if (id.toLowerCase() == list[i].type_of.toLowerCase()){
-            // alert(list[i].name + " - " + list[i].type_of);
-            var item = document.createElement('li');
-            item.setAttribute("id", list[i].name);
-            item.appendChild(document.createTextNode(list[i]).name)
-
-            ul.appendChild(item);
+            // var item = document.createElement('li');
+            // item.appendChild(document.createTextNode(list[i]).name)
+            // ul.appendChild(item);
+            ul.innerHTML += ('<li class="select-list"><a class="select-link" id="'+list[i].name+'">'+list[i].name+'</a></li>');
           }
         }
+        $('.sub-nav').toggleClass('visible');
+
+        $(".select-link").click(function(){
+          selectMarker(this.id);
+        });
     });
     
     buildMap();

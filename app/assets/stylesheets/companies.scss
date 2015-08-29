@@ -180,9 +180,12 @@ ul.visible {
 	display:inline;
 }
 
-.select-link{
-	&:hover{
-		cursor: pointer;
+.select-list{
+	list-style-type: none;
+	.select-link{
+		&:hover{
+			cursor: pointer;
+		}
 	}
 }
 
