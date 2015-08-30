@@ -14,9 +14,6 @@
             <tr>
               <td class="type-key <%= type %>"><input type="checkbox", name="<%= type %>", checked="checked", class="checkbox"><div id="<%= type %>", class="sub-select"><%= type %></div>
                 <ul id="<%= type %>-nav", class="sub-nav display-types">
-                 <!--  <% @display.each do |item| %>
-                      <li><a id="<%= item.name %>", class="select-link"><%= item.name %></a></li>
-                  <% end %> -->
                 </ul> 
               </td>
             </tr>
@@ -30,45 +27,9 @@
   <p id="notice" class="twelve columns"><%= notice %></p>
 </div>
 
-<!-- 
-Default rails listing from scaffold
-<h2>Rails Listing</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>Lat</th>
-      <th>Lng</th>
-      <th>Address</th>
-      <th>Name</th>
-      <th>Type</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @companies.each do |company| %>
-      <tr>
-        <td><%= company.latitude %></td>
-        <td><%= company.longitude %></td>
-        <td><%= company.address %></td>
-        <td><%= company.name %></td>
-        <td><%= company.type_of %></td>
-        <td><%= link_to 'Show', company %></td>
-        <td><%= link_to 'Edit', edit_company_path(company) %></td>
-        <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table> -->
-<!-- Script just here for now - will eventually move to asset pipeline -->
 <script type="text/javascript">
  $(document).ready(function(){
-  
-    var json = <%=raw @hash.to_json %>
-    // var list $.parseJSON(json);
-
-    
+    var json = <%=raw @hash.to_json %>    
     var handler;
     var markers = [];
 
@@ -137,10 +98,8 @@ Default rails listing from scaffold
         var ul = document.getElementById(id+"-nav");
 
         for(var i = 0; i < list.length; i++) {
-          if (id.toLowerCase() == list[i].type_of.toLowerCase()){
-            // var item = document.createElement('li');
-            // item.appendChild(document.createTextNode(list[i]).name)
-            // ul.appendChild(item);
+          if (id.toLowerCase() == list[i].type_of.toLowerCase())
+          {
             ul.innerHTML += ('<li class="select-list"><a class="select-link" id="'+list[i].name+'">'+list[i].name+'</a></li>');
           }
         }
