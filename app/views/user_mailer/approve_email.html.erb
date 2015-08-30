@@ -2,4 +2,5 @@
 <p><%= @company.name %></p>
 <p><%= @company.address %></p>
 <%= link_to 'Show', @company %>
-<%= link_to 'Approve', @company %>
+<%= link_to 'Approve', @company, method: :approve %>
+<%= link_to 'Destroy', @company, method: :delete, data: { confirm: 'Are you sure?' } %>

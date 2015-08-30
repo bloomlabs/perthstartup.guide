@@ -51,7 +51,7 @@ class CompaniesController < ApplicationController
   # POST /companies.json
   def create
     @company = Company.new(company_params)
-
+    @company.approved = false;
     respond_to do |format|
       if @company.save
         UserMailer.approve_email(@company).deliver
@@ -90,6 +90,12 @@ class CompaniesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+   def approve
+      @company.status = 1
+      format.html { redirect_to companies_url, notice: 'Company approved' }
+      format.json { head :no_content }
+   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
