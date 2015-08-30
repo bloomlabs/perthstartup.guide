@@ -1,10 +1,10 @@
 class CompaniesController < ApplicationController
-  before_action :set_company, only: [:show, :edit, :update, :destroy]
+  before_action :set_company, only: [:show, :edit, :update, :destroy, :approve]
 
   # GET /companies
   # GET /companies.json
   def index
-    @companies = Company.all
+    @companies = Company.where("approved = true")
 
     # Not used yet
     if params[:search]
@@ -29,7 +29,8 @@ class CompaniesController < ApplicationController
   end
 
   def autocomplete
-    @companies = Company.all
+    # @companies = Company.all
+    @companies = Company.where("approved = true")
     render json: @companies.where("LOWER(name) LIKE ?", "%#{params[:term].downcase}%").map(&:name)
   end
 
@@ -92,9 +93,10 @@ class CompaniesController < ApplicationController
   end
 
    def approve
-      @company.status = 1
-      format.html { redirect_to companies_url, notice: 'Company approved' }
-      format.json { head :no_content }
+      @company.approved = true
+      if @company.save()
+        redirect_to companies_url, notice: 'Company Approved'
+      end
    end
 
   private
