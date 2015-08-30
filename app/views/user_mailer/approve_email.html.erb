@@ -1,5 +1,7 @@
-<p>New company added submitted for approval</p>
-<p><%= @company.name %></p>
-<p><%= @company.address %></p>
-<%= link_to 'Show', @company %>
+<h2>New company submitted for approval</h2>
+<p>Name: <%= @company.name %></p>
+<p>Address: <%= @company.address %></p>
+<p>Type: <%= @company.type_of %></p>
+
+<%= link_to 'Details', @company %>
 

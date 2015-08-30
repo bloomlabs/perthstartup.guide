@@ -25,6 +25,12 @@
   <%= @company.type_of %>
 </p>
 
+<p>
+  <%= link_to @company.link, url_with_protocol(@company.link), :target => '_blank' %>
+</p>
+
+
+
 <%= link_to 'Edit', edit_company_path(@company) %> |
 <%= link_to 'Approve', approve_company_path(@company), method: :approve %> |
 <%= link_to 'Destroy', @company, method: :delete, data: { confirm: 'Are you sure?' } %> |
